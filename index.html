@@ -3,11 +3,10 @@
 
 <head>
   <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport"
     content="width=device-width, initial-scale=1, minimum-scale=1.0, shrink-to-fit=no, viewport-fit=cover">
-  <meta name="description" content="">
-  <title></title>
+
+  <title>meine | Zero effort notes</title>
 
   <link rel="stylesheet" media="(prefers-color-scheme: dark)"
     href="https://cdn.jsdelivr.net/npm/docsify-themeable@0/dist/css/theme-simple-dark.css">
@@ -22,6 +21,9 @@
       --theme-color: #2af;
     }
   </style>
+  <script>
+    const isLocalhost = window.location.href.includes( "localhost" );
+  </script>
 </head>
 
 <body>
@@ -29,31 +31,43 @@
 
   <script>
     window.$docsify = {
-      
+      basePath: isLocalhost ? '/' : '/meine/',
+      code: {
+        languages: [
+          'python',
+          'cpp',
+        ],
+      },
 
+      loadSidebar: "_sidebar.md",
+      name: '<i>meine</i>',
+      nameLink: '/',
+      nativeEmoji: true,
+      executeScript: true,
+      maxLevel: 4,
+      coverpage: false,
+      auto2top: true,
       themeable: {
         readyTransition: true,
         responsiveTables: true
       },
-      shiki: {
-        theme: synthwave84,
-      },
+      // DONT REMOVE OTHERWISE SYNTAX HIGHLIGHTING WILL NOT WORK
+      shiki: {},
     };
   </script>
-
-  <script src="./ui/index.js"></script>
 
   <script src="https://cdn.jsdelivr.net/npm/docsify@4/lib/docsify.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/docsify-themeable@0/dist/js/docsify-themeable.min.js"></script>
 
-  <script src="https://cdn.jsdelivr.net/npm/docsify@4/lib/plugins/search.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/docsify@4/lib/plugins/zoom-image.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/docsify@4/lib/plugins/search.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/docsify@4/lib/plugins/zoom-image.min.js"></script>
 
-  <script defer src="//cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.js"></script>
   <script defer src="//cdn.jsdelivr.net/npm/marked@4"></script>
   <script defer src="//cdn.jsdelivr.net/npm/docsify-katex@latest/dist/docsify-katex.js"></script>
 
-  <!-- <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-markdown.min.js"></script> -->
+  <script defer src="./ui/index.js"></script>
+  <script src="./ui/checks.js"></script>
 </body>
 
 </html>
