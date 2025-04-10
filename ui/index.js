@@ -14,4 +14,4 @@ function load () {
   } );
 };
 
-setTimeout( load, 10 );
+setTimeout( load, 100 );
